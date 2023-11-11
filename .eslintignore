@@ -1,11 +1,11 @@
-/node_modules/
-/.nuxt/
-/out/
-/build
-
-/src/env
-next.config.mjs
-prettier.config.cjs
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.env
+dist
 
 # tests
 /playwright/.auth
