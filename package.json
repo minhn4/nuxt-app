@@ -6,8 +6,9 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "start": "nuxt start",
-    "lint": "eslint . --ext .ts,.vue",
-    "lint:fix": "eslint . --ext .ts,.vue --fix && prettier --write .",
+    "test": "vitest run",
+    "lint": "eslint . --ext .js,.ts,.vue",
+    "lint:fix": "eslint . --ext .js,.ts,.vue --fix && prettier --write .",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
     "generate": "nuxt generate",
@@ -20,20 +21,22 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@nuxt/test-utils": "^3.8.1",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.0",
     "nuxt": "^3.8.1",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
+    "vitest": "^0.34.6",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.22",
     "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
-    "husky": "^8.0.0"
+    "webpack-cli": "^5.1.4"
   }
 }
