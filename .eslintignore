@@ -1,0 +1,14 @@
+/node_modules/
+/.nuxt/
+/out/
+/build
+
+/src/env
+next.config.mjs
+prettier.config.cjs
+
+# tests
+/playwright/.auth
+/playwright/.cache
+/playwright-report
+/test-results
