@@ -1,4 +1,4 @@
-# nuxt-app
+# Web App
 
 Just another hodgepodge web app with TypeScript and Nuxt
 
