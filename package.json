@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .ts,.vue",
     "lint:fix": "eslint . --ext .ts,.vue --fix && prettier --write .",
     "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
