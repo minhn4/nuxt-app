@@ -1,10 +1,6 @@
 /node_modules/
-
-# next.js
-/.next/
+/.nuxt/
 /out/
-
-# production
 /build
 
 /src/env
