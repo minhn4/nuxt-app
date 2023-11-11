@@ -1,0 +1,18 @@
+/node_modules/
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+/src/env
+next.config.mjs
+prettier.config.cjs
+
+# tests
+/playwright/.auth
+/playwright/.cache
+/playwright-report
+/test-results
