@@ -1,11 +1,11 @@
 <script>
 import UserProfile from "./components/buttons/UserProfile.vue";
-import DarkModeSwitcher from "./components/buttons/DarkModeSwitcher.vue";
+import DarkModeToggle from "./components/buttons/DarkModeToggle.vue";
 
 export default {
   components: {
     UserProfile,
-    DarkModeSwitcher,
+    DarkModeToggle,
   },
 };
 </script>
@@ -13,7 +13,7 @@ export default {
 <template>
   <div>
     <UserProfile />
-    <DarkModeSwitcher />
+    <DarkModeToggle />
     <p>Testing text</p>
   </div>
 </template>
