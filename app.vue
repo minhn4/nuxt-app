@@ -17,7 +17,7 @@
 
           <div class="text-subtitle1 q-mt-md q-mb-xs">John Doe</div>
 
-          <q-btn color="primary" label="Logout" push size="sm" v-close-popup />
+          <q-btn v-close-popup color="primary" label="Logout" push size="sm" />
         </div>
       </div>
     </q-btn-dropdown>
