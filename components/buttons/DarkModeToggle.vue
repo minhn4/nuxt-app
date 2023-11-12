@@ -1,3 +1,13 @@
+<template>
+  <q-toggle
+    v-model="darkMode"
+    checked-icon="dark_mode"
+    color="red"
+    size="lg"
+    unchecked-icon="light_mode"
+  />
+</template>
+
 <script>
 export default defineComponent({
   setup() {
@@ -14,13 +24,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<template>
-  <q-toggle
-    v-model="darkMode"
-    checked-icon="dark_mode"
-    color="red"
-    size="lg"
-    unchecked-icon="light_mode"
-  />
-</template>

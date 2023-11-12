@@ -1,19 +1,26 @@
+<template>
+  <div>
+    <SidebarWithHeader />
+    <DarkModeToggle />
+    <UserProfile />
+    <ul>
+      <li><NuxtLink to="/inbox">Inbox</NuxtLink></li>
+      <li><NuxtLink to="/about">About</NuxtLink></li>
+    </ul>
+    <NuxtPage />
+  </div>
+</template>
+
 <script>
-import UserProfile from "./components/buttons/UserProfile.vue";
+import SidebarWithHeader from "./components/navigation/SidebarWithHeader.vue";
 import DarkModeToggle from "./components/buttons/DarkModeToggle.vue";
+import UserProfile from "./components/buttons/UserProfile.vue";
 
 export default {
   components: {
-    UserProfile,
+    SidebarWithHeader,
     DarkModeToggle,
+    UserProfile,
   },
 };
 </script>
-
-<template>
-  <div>
-    <UserProfile />
-    <DarkModeToggle />
-    <p>Testing text</p>
-  </div>
-</template>
