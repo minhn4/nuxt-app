@@ -18,11 +18,12 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.10.0",
-    "axios": "^1.6.1"
+    "@quasar/extras": "^1.16.8",
+    "axios": "^1.6.1",
+    "quasar": "^2.13.1"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
+    "@nuxt/devtools": "^1.0.2",
     "@nuxt/test-utils": "^3.8.1",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@playwright/test": "^1.39.0",
@@ -33,6 +34,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.0",
     "nuxt": "^3.8.1",
+    "nuxt-quasar-ui": "^2.0.6",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",

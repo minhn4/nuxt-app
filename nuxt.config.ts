@@ -2,5 +2,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: { typeCheck: true },
-  modules: ["@nuxt/ui"],
+  modules: ["nuxt-quasar-ui"],
+  quasar: {},
 });
