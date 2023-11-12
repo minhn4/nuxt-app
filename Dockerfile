@@ -10,12 +10,14 @@ WORKDIR /app
 # Install OpenSSL 1.1.x, needed for Prisma in Linux Alpine 3.17+
 RUN apk add --no-cache libc6-compat openssl1.1-compat
 
-COPY package.json yarn.lock* ./
-RUN yarn install \
-  --prefer-offline \
-  --frozen-lockfile \
-  --non-interactive \
-  --production=false
+# Install dependencies based on the preferred package manager
+COPY package.json pnpm-lock.yaml* yarn.lock* package-lock.json* ./
+RUN \
+ if [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm i --frozen-lockfile; \
+ elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+ elif [ -f package-lock.json ]; then npm ci; \
+ else echo "Lockfile not found." && exit 1; \
+ fi
 
 ##### BUILDER
 
@@ -24,14 +26,13 @@ WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN SKIP_ENV_VALIDATION=1 yarn build
 
-RUN rm -rf node_modules && \
-  NODE_ENV=production yarn install \
-  --prefer-offline \
-  --pure-lockfile \
-  --non-interactive \
-  --production=true
+RUN \
+ if [ -f pnpm-lock.yaml ]; then npm install -g pnpm && SKIP_ENV_VALIDATION=1 pnpm build; \
+ elif [ -f yarn.lock ]; then SKIP_ENV_VALIDATION=1 yarn build; \
+ elif [ -f package-lock.json ]; then SKIP_ENV_VALIDATION=1 npm run build; \
+ else echo "Lockfile not found." && exit 1; \
+ fi
 
 ##### RUNNER
 
@@ -43,6 +44,6 @@ ENV NODE_ENV production
 COPY --from=builder /app/.output/  ./.output/
 
 EXPOSE 3000
-ENV PORT 3000
+ENV HOST 0.0.0.0
 
 CMD [ "node", ".output/server/index.mjs" ]
