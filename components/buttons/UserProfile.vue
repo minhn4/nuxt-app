@@ -1,14 +1,3 @@
-<script>
-export default {
-  setup() {
-    return {
-      mobileData: ref(false),
-      bluetooth: ref(false),
-    };
-  },
-};
-</script>
-
 <template>
   <div class="q-pa-md">
     <q-btn-dropdown class="glossy" color="purple" label="Account Settings">
@@ -34,3 +23,14 @@ export default {
     </q-btn-dropdown>
   </div>
 </template>
+
+<script>
+export default {
+  setup() {
+    return {
+      mobileData: ref(false),
+      bluetooth: ref(false),
+    };
+  },
+};
+</script>
